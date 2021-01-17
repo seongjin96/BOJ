@@ -30,5 +30,6 @@ int main() {
 		dp[i] = max(arr[i], dp[i - 1] + arr[i]);
 		ans = max(ans, dp[i]);
 	}
+
 	cout << ans << "\n";
 }
