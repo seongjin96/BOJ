@@ -23,6 +23,24 @@ void DFS(int start) {
 	}
 }
 
+void BFS(int start) {
+	visited[start] = true;
+	q.push(start);
+
+	while (!q.empty()) {
+		start = q.front();
+		q.pop();
+
+		for (int i = 1; i <= N; i++) {
+			if (adjacent[start][i] && !visited[i]) {
+				visited[i] = true;
+				q.push(i);
+				answer++;
+			}
+		}
+	}
+}
+
 int main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(NULL);
@@ -38,5 +56,6 @@ int main() {
 	}
 
 	DFS(1);
+	//BFS(1);
 	cout << answer;
 }
