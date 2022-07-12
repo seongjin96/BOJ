@@ -7,4 +7,15 @@ import sys
 
 N = int(sys.stdin.readline())
 arr = list(map(int, sys.stdin.readline().split()))
+ans = [0] * N
+dic = {}
 
+for i in range(len(arr)):
+  dic[i] = arr[i]
+
+dic = sorted(dic.items(), key = lambda x : -x[1])
+
+print(dic)
+
+for i in range(N):
+  cnt = 0
