@@ -13,9 +13,17 @@ dic = {}
 for i in range(len(arr)):
   dic[i] = arr[i]
 
-dic = sorted(dic.items(), key = lambda x : -x[1])
-
+dic = sorted(dic.items(), key = lambda x : x[1])
 print(dic)
-
-for i in range(N):
+idx = 0
+for i in range(N - 1):
   cnt = 0
+  for j in range(i + 1, N - 1):
+    if dic[i][1] < dic[j][1]:
+      idx += 1
+      break
+    elif dic[i][1] == dic[j][1]:
+      break
+  ans[dic[i][0]] = idx
+
+print(ans)
