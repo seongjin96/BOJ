@@ -10,3 +10,13 @@ arr = list(map(int, sys.stdin.readline().split()))
 M = int(sys.stdin.readline())
 arr2 = list(map(int, sys.stdin.readline().split()))
 
+ans = []
+
+for num in arr2:
+  if num in arr:
+    ans.append(1)
+  else:
+    ans.append(0)
+
+for num in ans:
+  print(num, end = ' ')
