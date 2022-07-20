@@ -13,8 +13,10 @@ for i in range(9):
 strList = []
 for _ in range(N):
   str = sys.stdin.readline().rstrip()
-  print(str)
-  for i in range(len(str), 0, -1):
-    dic[i].append(str[i - 1])
+  strLen = len(str)
+  for i in range(len(str)):
+    dic[strLen].append(str[i])
+    strLen -= 1
+
 
 print(dic)
