@@ -11,7 +11,6 @@ visited = [False] * (N + 1)
 graph = [[] for _ in range(N + 1)]
 answer = [0] * (N + 1)
 
-
 for _ in range(M):
     node1, node2 = map(int, sys.stdin.readline().split())
     graph[node1].append(node2)
